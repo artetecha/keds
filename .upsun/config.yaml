@@ -71,23 +71,15 @@ applications:
                 psy/psysh: "^0.8.4"
 
         mounts:
-            "wordpress/wp-content/cache":
+            "wordpress/wp-content":
                 source: local
-                source_path: "cache"
-            "wordpress/wp-content/uploads":
-                source: local
-                source_path: "uploads"
-            "wordpress/wp-content/wp-cloudflare-super-page-cache":
-                source: local
-                source_path: "wp-cloudflare-page-cache"
+                source_path: "wp-content"
 
 services:
     kedsdb:
         type: mariadb:11.2
-
     redis:
         type: redis:7.2
-
     es:
         type: elasticsearch:7.10
 
